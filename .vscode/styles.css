@@ -1,6 +1,6 @@
 body{
     background-color: rgb(173, 241, 213);
-    background-image: url("boxing_ring.png");
+    background-image: url("https://lh3.googleusercontent.com/0xalfKCBq1Y_4D25LjPz5FF6C7vkxlTtAWO9b85nmnP4QY7RdRRe-PTxd8Np81F0tLHIfzU5O9sO3reY9xuz1HQ=w974");
 }
 
    
@@ -15,10 +15,10 @@ body{
     float: right;
     background-color: rgba(250, 246, 246, 0.952);
     position: relative;
-    top: 5px;
+    top: 0px;
     padding: 5px;
     border: 8px solid black;
-    width: 200px;
+    width: 250px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     align-items: baseline;
 }
