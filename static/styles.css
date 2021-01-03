@@ -1,8 +1,14 @@
 body{
-    background-color: rgb(173, 241, 213);
-    background-image: url("https://lh3.googleusercontent.com/0xalfKCBq1Y_4D25LjPz5FF6C7vkxlTtAWO9b85nmnP4QY7RdRRe-PTxd8Np81F0tLHIfzU5O9sO3reY9xuz1HQ=w974");
+    background-color:#FFFAFA;
 }
 
+h1{
+    text-align:center;
+}
+
+h5{
+    text-align:center;
+}
    
 .boxed{
     position: absolute;
