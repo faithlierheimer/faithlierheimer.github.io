@@ -1,0 +1,141 @@
+/* style.css - Custom styling for Faith McKenna Portfolio & Blog */
+
+/* Reset default browser styles for cleaner layout */
+body, h1, h2, h3, p, ul, li, footer, nav, main, section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base font and page background */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; /* Modern, readable font */
+  background: #f6f8fa; /* Soft, clean background */
+  color: #222; /* Dark text for contrast */
+  line-height: 1.7;
+}
+
+/* Navigation Bar */
+nav {
+  background: #212b36; /* Dark navy bar */
+  padding: 1em 0;
+  box-shadow: 0 2px 8px rgba(33,43,54,0.04);
+}
+
+nav ul {
+  list-style: none; /* Remove bullets */
+  display: flex;    /* Horizontal navigation */
+  justify-content: center;
+  gap: 2.5em;       /* Space between links */
+}
+
+nav a {
+  color: #fff;      /* White nav text */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  letter-spacing: 0.03em;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover, nav a:focus {
+  background: #4fc3f7;  /* Soft blue background on hover */
+  color: #212b36;       /* Dark text on hover */
+}
+
+/* Main Content */
+main {
+  max-width: 750px;
+  margin: 2.5em auto 2em auto;
+  padding: 2em;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(33,43,54,0.09);
+  border-radius: 10px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #212b36;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+section h2 {
+  margin-top: 1.5em;
+}
+
+p, ul {
+  font-size: 1.1em;
+}
+
+ul {
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/* News list styling */
+section ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+section ul li {
+  margin-bottom: 0.8em;
+  line-height: 1.5;
+}
+
+/* Bold for news dates */
+section ul li b {
+  color: #1565c0;
+}
+
+/* Links in main content */
+main a {
+  color: #0077cc;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+main a:hover, main a:focus {
+  color: #1565c0;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background: #212b36;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1em;
+  margin-top: 2em;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Responsive navigation and main content for mobile */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1em;
+  }
+  main {
+    padding: 1em;
+    max-width: 98vw;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
