@@ -3,7 +3,7 @@ pagination:
     data: pages.blog.pages
     size: 1
     alias: post
-permalink: "{{ post.permalink }}"
+permalink: "/{{ post.permalink }}/"
 eleventyComputed:
   metaTitle: "{{ post.metaTitle }}"
   metaDescription: "{{ post.description }}"
@@ -18,7 +18,7 @@ cssFile: "blog-post.css"
         {% if post.featuredImage %}
             <img class="featured-image" src="{{ post.featuredImage }}" alt="{{ post.featuredImageDescription}}" />
         {% else  %}
-            <img class="featured-image" src="/public/img/placeholder-dog.jpg" alt="dog with spaghetti on his head" />
+            <img class="featured-image" src="/public/img/default-featured-image.jpg" alt="Faith McKenna delivers a keynote talk at Coalesce 2025" />
         {% endif %}
         <h1>{{ post.title | safe }}</h1>
         <h2>{{ post.publishDate }}</h2>

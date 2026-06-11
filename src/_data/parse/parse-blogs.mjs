@@ -21,7 +21,7 @@ export const parseBlogData = async (blogEntries) => {
       featuredImage: mainPageFeatImage,
       featuredImageDescription: mainPageFeatImageDescription,
       metaTitle: mainBlog.properties.metaTitle.rich_text[0]?.plain_text,
-      permalink: "/blog/",
+      permalink: "blog",
       categories: [],
     },
     categories: [],
@@ -74,7 +74,7 @@ export const parseBlogData = async (blogEntries) => {
         const page = {
           title,
           body,
-          permalink: `/blog/${categoryId}/${id}/`,
+          permalink: `blog/${categoryId}/${id}`,
           metaTitle,
           description,
           featuredImage,

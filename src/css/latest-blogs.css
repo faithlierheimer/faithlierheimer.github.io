@@ -64,6 +64,7 @@
     content: url("/public/icons/icon-arrow.svg");
     margin: .18rem 0 0 .3rem;
     opacity: .6;
+    width: 1rem;
 }
 
 .link-to-blogs:hover {

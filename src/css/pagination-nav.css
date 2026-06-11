@@ -1,0 +1,44 @@
+.pagination-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+.pagination-nav a, .pagination-nav span {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.nav-btn-next::after {
+    content: url("/public/icons/icon-arrow.svg");
+    margin: .35rem 0 0 .5rem;
+    width: 1rem;
+}
+.nav-btn-prev::before {
+    content: url("/public/icons/icon-arrow.svg");
+    transform: rotate(180deg);  
+    -webkit-transform: rotate(180deg);
+    margin: 0 .5rem .25rem 0;
+    width: 1rem;
+}
+
+.nav-btn-next:hover::after {
+    content: url("/public/icons/icon-arrow-blue.svg");
+}
+.nav-btn-prev:hover::before {
+    content: url("/public/icons/icon-arrow-blue.svg");
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .nav-btn:hover {
+    color: var(--text-link-hover);
+ }
+    
