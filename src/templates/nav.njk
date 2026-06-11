@@ -1,0 +1,63 @@
+<style>{% include "src/css/nav.css" %}</style>
+<nav class="main-nav">
+    <div class="mobile-nav">
+        <div class="mobile-nav-header flex">
+            <img id="hamburger-icon" class="menu-icon active" src="/public/icons/hamburger-menu-dark-mode.svg" alt="menu icon"/>
+            <img id="close-icon" class="menu-icon" src="/public/icons/x-icon-dark-mode.svg" alt="menu icon"/>
+        </div>
+        <ul id="main-nav-list-mobile" class="main-nav-list-mobile">
+            <li>
+                <a href="/">about</a>
+            </li>
+            <li>
+                <a href="/blog">blog</a>
+            </li>
+            {# <li>
+                <a href="/projects">projects</a>
+            </li> #}
+            {# {% for item in pages %}
+                <li>
+                    {% if item.permalink  == page.url %}
+                        <a class="{% if page.url == '/' ~ content.blog.main.permalink %}active{% endif %}" href="/">{{ item.label }}</a>
+                    {% else %}
+                        <a href="{{ item.permalink }}">{{ item.label }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %} #}
+        </ul>
+    </div>
+    <div class="desktop-nav">
+        <ul id="main-nav-list-desktop" class="main-nav-list-desktop">
+            <li>
+                <a href="/">about</a>
+            </li>
+            <li>
+                <a href="/blog">blog</a>
+            </li>
+            {# <li>
+                <a href="/projects">projects</a>
+            </li> #}
+        </ul>
+    </div>
+</div></nav><script>
+const menuIcons = document.querySelectorAll(".menu-icon");
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const closeIcon = document.getElementById("close-icon");
+const mobileNavList = document.getElementById("main-nav-list-mobile");
+let mobileMenuActive = false;
+const handleMenuToggle = () => {
+    hamburgerIcon.classList.toggle("active");
+    closeIcon.classList.toggle("active");
+    if (mobileNavList.classList.contains("active")) {
+        setTimeout(() => {
+            mobileNavList.classList.toggle("active");
+        }, 100);
+    } else {
+        mobileNavList.classList.toggle("active");
+    }
+};
+for (const icon of menuIcons) {
+    icon.addEventListener("click", () => {
+        handleMenuToggle()
+    })
+}</script>

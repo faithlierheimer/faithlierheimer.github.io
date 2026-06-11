@@ -1,0 +1,26 @@
+{% macro blogCard(page) %}
+<div class="blog-card">
+    <a href="{{ page.permalink }}">
+        <div class="blog-card-featured-image">
+        {% if page.featuredImage %}
+            <img src="{{ page.featuredImage }}" alt="{{ page.featuredImageDescription }}" />
+        {% else %}
+            <img src="/public/img/default-featured-image.png" alt="Carlton, mascot of the Toronto Maple Leafs and Faith" />
+        {% endif %}
+        </div>
+
+        <h3>{{ page.title }}</h3>
+        <div class="blog-card-details">
+            <div class="blog-card-date">
+                <img src="/public/icons/calendar-icon.svg" alt="calendar icon" />
+                <h4>{{ page.publishDate }}</h4>
+            </div> 
+            <span>|</span>
+            <div class="blog-card-category">
+                <img src="/public/icons/tag-icon.svg" alt="tag icon" />
+                <h4>{{ page.category }}</h4>
+            </div> 
+        </div>
+    </a>
+</div>
+{% endmacro %}

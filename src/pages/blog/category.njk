@@ -1,0 +1,31 @@
+---
+pagination:
+    data: pages.blog.categories
+    size: 1
+    alias: category
+permalink: /blog/{{ category.id }}/
+eleventyComputed:
+  metaTitle: "{{ category.metaTitle }}"
+  metaDescription: "{{ category.description }}"
+layout: layouts/base.njk
+cssFile: "blog-home.css"
+---
+<link rel="stylesheet" href="/css/{{ cssFile }}" />
+
+{% set selected = category %}
+{% set selectedId = category.id %}
+{% set blogPages = selected.pages %}
+{% set blogCategories = pages.blog.main.categories %}
+
+<section>
+    <h1>{{ selected.label }}</h1>
+</section>
+
+{% include "../../templates/blog-categories.njk" %}
+{% from "../../templates/blog-card.njk" import blogCard %}
+
+<section class="blog-card-container">
+    {% for page in blogPages %}
+        {{ blogCard(page) }}
+    {% endfor %}
+</section>

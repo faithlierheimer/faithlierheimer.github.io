@@ -1,0 +1,15 @@
+node_modules
+
+build
+.env
+.env.*
+
+test.json
+pages.json
+notionData.json
+test.js
+
+src/public/img/db/*
+
+env.js
+env.mjs

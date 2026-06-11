@@ -1,0 +1,117 @@
+.latest-blogs-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-blogs-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.latest-blogs-header h4 {
+    font-weight: 300;
+}
+.latest-blogs-header img {
+    opacity: .6;
+    margin-left: .25rem;
+    
+}
+.latest-blogs-header a:hover img {
+    opacity: 1;
+}
+
+.latest-blogs {
+    border: 1px solid var(--text-gray);
+    border-radius: .5rem;
+}
+.latest-blogs a, .older a {
+    text-decoration: none;
+}
+
+.latest {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+}
+
+.latest-featured-image, .latest-content {
+    width: 100%;
+}
+.latest-featured-image img {
+    width: 100%;
+    border-radius: .5rem;
+    max-width: none;
+}
+
+.latest-content h4 {
+    margin: 0 0 .5rem 0;
+}
+
+.latest-content span {
+    color: var(--text-gray);
+}
+
+.link-to-blogs {
+    color: var(--text-gray);
+    text-decoration: none;
+    display: flex;
+}
+
+.link-to-blogs::after {
+    content: url("/public/icons/icon-arrow.svg");
+    margin: .18rem 0 0 .3rem;
+    opacity: .6;
+}
+
+.link-to-blogs:hover {
+    color: var(--text-link-hover);
+}
+
+.link-to-blogs:hover::after {
+    content: url("/public/icons/icon-arrow-blue.svg");
+    opacity: 1;
+}
+
+.older-content h4 {
+    margin: 0;
+    color: var(--text-white);
+    text-emphasis: none;
+}
+
+.older-content span {
+    margin: .5rem 0 0 0;
+    color: var(--text-gray);
+}
+
+.latest-content p {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.older-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--text-gray);
+}
+
+@media (min-width: 680px) {
+    .latest {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .latest-content {
+        margin: auto 0;
+    }
+    .older-content:hover h4, .latest-blogs a:hover h4 {
+        color: var(--text-link-hover);
+    }
+}

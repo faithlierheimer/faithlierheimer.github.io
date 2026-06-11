@@ -1,0 +1,105 @@
+.main-nav {
+  width: 100%;
+  height: 4rem;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+.desktop-nav {
+    display: none;
+}
+
+.menu-icon {
+  height: 34px;
+  width: 34px;
+}
+
+.main-nav-list-mobile {
+  flex-direction: row;
+  width: 100%;
+}
+
+.mobile-nav-header {
+  justify-content: flex-end;
+  width: 100%;
+  background-color: var(--background);
+}
+
+.menu-icon {
+  padding: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon.active {
+  display: block;
+}
+
+.main-nav-list-mobile {
+  background-color: var(--background);
+  opacity: 0.95;
+  margin: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .3s ease, opacity .5s ease;
+}
+.main-nav-list-mobile.active {
+  max-height: 500px;
+  opacity: 0.99;
+  border-bottom: 1px solid var(--text-gray);
+}
+.main-nav-list-mobile li {
+  padding: 0.75rem 1rem 0.75rem 0;
+}
+.main-nav-list-mobile a.active, .main-nav-list-desktop a.active {
+  color: #7ed9f5;
+}
+.main-nav-list-mobile a:hover, .main-nav-list-desktop a:hover {
+  color: var(--text-link-hover);
+}
+.main-nav-list-mobile li:first-of-type {
+  padding-top: 1rem;
+}
+.main-nav-list-mobile li:last-of-type {
+  padding-bottom: 1rem;
+}
+
+.main-nav-list-mobile a, .main-nav-list-desktop a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0.5rem;
+}
+
+@media (min-width: 680px) {
+    .mobile-nav {
+        display: none;
+    }
+    .desktop-nav {
+        display: block;
+        height: 100%;
+    }
+    .main-nav-list-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        margin: 0 0 0 -2rem;
+        padding: 0;
+        list-style: none;
+        background-color: var(--background);
+    }
+    .main-nav-list-desktop li {
+      margin-bottom: 0;
+    }
+}

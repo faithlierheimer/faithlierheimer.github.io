@@ -1,0 +1,20 @@
+<section class="blog-categories">
+    <ul>
+        <li>
+            {% if selectedId === 'all' %}
+                <a class="category-selected" href="/blog/all">All</a>
+            {% else %}
+                <a href="/blog">All</a>
+            {% endif %}
+        </li>
+        {% for category in blogCategories %}
+        <li>
+            {% if selectedId === category.id %}
+                <a class="category-selected" href="/blog/{{ category.id }}">{{ category.label }}</a>
+            {% else %}
+            <a href="/blog/{{ category.id }}">{{ category.label }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
