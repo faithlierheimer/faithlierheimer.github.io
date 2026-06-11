@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+permalink: /{{ pages.blog.main.permalink }}/
+eleventyComputed:
+  metaTitle: "{{ pages.blog.main.metaTitle }}"
+  metaDescription: "{{ pages.blog.main.description  }}"
+cssFile: "blog-home.css"
+---
+
+{% set blog = pages.blog.main %}
+{% set blogPages = pages.blog.pages %}
+{% set blogCategories = blog.categories %}
+{% set selectedId = "all" %}
+{% from "../../templates/blog-card.njk" import blogCard %}
+<link rel="stylesheet" href="/css/{{ cssFile }}" />
+
+<section class="title-section">
+    {{ blog.body | safe }}
+</section>
+
+{% include "../../templates/blog-categories.njk" %}
+
+<section class="blog-card-container">
+    {% for page in blogPages %}
+        {{ blogCard(page) }}
+    {% endfor %}
+</section>
+

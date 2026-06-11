@@ -1,0 +1,49 @@
+name: Build and Deploy
+
+on:
+  workflow_dispatch:
+  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+      - name: Check env
+        run: |
+          if [ -z "$NOTION_DATABASE_SECRET" ]; then
+            echo "SECRET IS EMPTY"
+          else
+            echo "SECRET is set (length: ${#NOTION_DATABASE_SECRET})"
+          fi
+        env:
+          NOTION_DATABASE_SECRET: ${{ secrets.NOTION_DATABASE_SECRET }}
+
+      - name: Build Eleventy
+        run: npx @11ty/eleventy
+        env:
+          NOTION_DATABASE_SECRET: ${{ secrets.NOTION_DATABASE_SECRET }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/
+
+      - uses: actions/deploy-pages@v4
+        id: deployment

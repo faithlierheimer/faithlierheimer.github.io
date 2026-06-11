@@ -1,0 +1,38 @@
+<style>{% include "src/css/featured-blogs.css" %}</style>
+
+{% set featuredBlogs = pages.blog.featured %}
+
+<style>{% include "src/css/featured-blogs.css" %}</style>
+
+
+<section class="featured-blogs-wrapper">
+    <div class="featured-blogs-header">
+        <h4>Check out more of my writing:</h4>
+        <a class="link-to-blogs" href="/blog">All</a>
+    </div>
+    <div class="featured-blogs">  
+        {% for featuredBlog in featuredBlogs %}
+         {% if featuredBlog.permalink !== post.permalink  %}
+        <a href="{{ featuredBlog.permalink }}">
+            <div class="featured">
+                <div class="featured-featured-image">
+                    {% if featuredBlog.featuredImage %}
+                        <img src="{{ featuredBlog.featuredImage }}" alt="{{ featuredBlog.featuredImageDescription }}"/>
+                    {% else %}
+                        <img src="/public/img/placeholder-dog.jpg" alt="Dog with Spagett on hed"/>
+                    {% endif %}
+                </div>
+                <div class="featured-content">
+                    <h4>
+                        {{ featuredBlog.title }}
+                    </h4>
+                    <span>{{ featuredBlog.publishDate }}</span>
+                    <p>{{ featuredBlog.teaserText }}</p>
+                </div>
+
+            </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>

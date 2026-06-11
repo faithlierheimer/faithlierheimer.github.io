@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="{{ metaDescription }}" />
+    <link rel="icon" href="/public/img/favicon.png">
+    <style>{% include "src/css/style.css" %}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>{{ metaTitle }}</title>
+  </head>
+  <body>
+    {% include "../../templates/nav.njk" %}
+    <main>{{ content | safe }}</main>
+  </body>
+  {% include "../../templates/footer.njk" %}
+</html>

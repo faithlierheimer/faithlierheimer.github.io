@@ -1,0 +1,30 @@
+---
+pagination:
+    data: pages.blog.pages
+    size: 1
+    alias: post
+permalink: "{{ post.permalink }}"
+eleventyComputed:
+  metaTitle: "{{ post.metaTitle }}"
+  metaDescription: "{{ post.description }}"
+layout: layouts/base.njk
+cssFile: "blog-post.css"
+---
+
+<link rel="stylesheet" href="/css/{{ cssFile }}" />
+
+<section class="blog-post">
+    <div class="blog-post-hero">
+        {% if post.featuredImage %}
+            <img class="featured-image" src="{{ post.featuredImage }}" alt="{{ post.featuredImageDescription}}" />
+        {% else  %}
+            <img class="featured-image" src="/public/img/placeholder-dog.jpg" alt="dog with spaghetti on his head" />
+        {% endif %}
+        <h1>{{ post.title | safe }}</h1>
+        <h2>{{ post.publishDate }}</h2>
+    </div>
+    <div class="content-wrapper">
+        {{ post.body | safe }}
+    </div>
+</section>
+{% include "../../templates/featured-blogs.njk" %}

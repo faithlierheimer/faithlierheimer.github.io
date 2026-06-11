@@ -1,0 +1,46 @@
+<style>{% include "src/css/latest-blogs.css" %}</style>
+
+{% set latestBlogs = pages.blog.pages  %}
+{% set latestBlog = latestBlogs[0] %}
+{% set older = [latestBlogs[1], latestBlogs[2], latestBlogs[3]] %}
+
+<section class="latest-blogs-wrapper">
+    <div class="latest-blogs-header">
+        <h4>Latest posts</h4>
+        <a class="link-to-blogs" href="/blog">All</a>
+    </div>
+    <div class="latest-blogs">  
+        <a href="{{ latestBlog.permalink }}">
+        <div class="latest">
+            <div class="latest-featured-image">
+                {% if latestBlog.featuredImage %}
+                    <img src="{{ latestBlog.featuredImage }}" alt="{{ latestBlog.featuredImageDescription }}"/>
+                {% else %}
+                    <img src="/public/img/placeholder-dog.jpg" alt="Dog with Spagett on hed"/>
+                {% endif %}
+            </div>
+            <div class="latest-content">
+                <h4>
+                    {{ latestBlog.title }}
+                </h4>
+                <span>{{ latestBlog.publishDate }}</span>
+                <p>{{ latestBlog.teaserText }}</p>
+            </div>
+
+        </div>
+        </a>
+        <div class="older">
+            {% for blog in older %}
+            
+             <a href="{{ blog.permalink }}" class="older-content">
+                <h4>
+                    {{ blog.title }}
+                </h4>
+                <span>{{ blog.publishDate }}</span>
+            </a>
+            {% endfor %}
+        
+        </div>
+
+    </div>
+</section>

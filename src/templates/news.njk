@@ -1,0 +1,11 @@
+<style>{% include "src/css/news.css" %}</style>
+{% set news = pages.home.main.news %} 
+
+<section class="news">
+    <h2 class="section-header">news</h2>
+    <ul>
+    {% for item in news %}
+        <li><span>{{ item.publishDate }}:</span> {{ item.title | safe }}</li>
+    {% endfor %}
+    </ul>
+</section>

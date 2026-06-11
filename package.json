@@ -1,0 +1,32 @@
+{
+  "name": "bloghavefaith",
+  "version": "1.0.0",
+  "description": "Faith's Blog",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkMcKenna5/BlogHaveFaith.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkMcKenna5/BlogHaveFaith/issues"
+  },
+  "homepage": "https://github.com/MarkMcKenna5/BlogHaveFaith#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@notionhq/client": "^4.0.1",
+    "fs-extra": "^11.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "globals": "^17.6.0"
+  }
+}

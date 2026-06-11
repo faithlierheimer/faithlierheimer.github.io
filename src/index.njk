@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  metaTitle: "{{ pages.home.main.metaTitle }}"
+  metaDescription: "{{ pages.home.main.description }}"
+---
+<style>{% include "src/css/home.css" %}</style>
+<style>{% include "src/css/news.css" %}</style>
+{% set home = pages.home.main  %}
+<div>
+    <section>
+        <h1>{{ home.title | wrapFirstWord | safe }}</h1>
+    </section>
+ <section class="content-wrapper">
+    <div class="body">
+        {{ home.body | safe }}
+    </div>
+ </section>
+</div>
+{% include "./templates/latest-blogs.njk" %}
+{% include "./templates/news.njk" %}
+
