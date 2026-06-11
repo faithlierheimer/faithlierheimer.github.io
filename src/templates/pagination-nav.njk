@@ -1,0 +1,13 @@
+<style>{% include "src/css/pagination-nav.css" %}</style>
+
+<nav class="pagination-nav" aria-label="Blog pages">
+    {% if pagination.href.previous %}
+        <a class="nav-btn nav-btn-prev" href="{{ pagination.href.previous }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}</span>
+
+    {% if pagination.href.next %}
+        <a class="nav-btn nav-btn-next" href="{{ pagination.href.next }}">Next</a>
+    {% endif %}
+</nav>

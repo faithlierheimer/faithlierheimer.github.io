@@ -72,6 +72,7 @@ footer nav a {
 .social::before {
     margin-top: .11rem;
     opacity: .6;
+    width: 1rem;
 }
 .social:hover::before {
     opacity: 1;

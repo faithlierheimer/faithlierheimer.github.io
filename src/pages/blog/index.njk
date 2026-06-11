@@ -1,14 +1,17 @@
 ---
 layout: layouts/base.njk
-permalink: /{{ pages.blog.main.permalink }}/
+pagination:
+  data: pages.blog.pages
+  size: 10
+  alias: blogPages
+permalink: "/{{ pages.blog.main.permalink }}/{% if pagination.pageNumber > 0 %}all/{{ pagination.pageNumber + 1 }}/{% endif %}"
 eleventyComputed:
   metaTitle: "{{ pages.blog.main.metaTitle }}"
-  metaDescription: "{{ pages.blog.main.description  }}"
+  metaDescription: "{{ pages.blog.main.description }}"
 cssFile: "blog-home.css"
 ---
 
 {% set blog = pages.blog.main %}
-{% set blogPages = pages.blog.pages %}
 {% set blogCategories = blog.categories %}
 {% set selectedId = "all" %}
 {% from "../../templates/blog-card.njk" import blogCard %}
@@ -26,3 +29,4 @@ cssFile: "blog-home.css"
     {% endfor %}
 </section>
 
+{% include "../../templates/pagination-nav.njk" %}
