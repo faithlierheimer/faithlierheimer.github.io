@@ -2,6 +2,7 @@ import { parseBlogData } from "./parse-blogs.mjs"
 import { parseProjectData } from "./parse-projects.mjs"
 import { parseNewsData } from "./parse-news.mjs"
 import { parseHomeData } from "./parse-home.mjs"
+import { parseResumeData } from "./parse-resume.mjs"
 
 
 const sortEntriesIntoBuckets = (entries) => {
@@ -36,27 +37,18 @@ export const parse = async (entries) => {
     const buckets = sortEntriesIntoBuckets(entries);
 
     const news = parseNewsData(buckets.news);
+    const resume = parseResumeData(buckets.resume)
     const home = await parseHomeData(buckets.about);
     home.main.news = news;
 
     const blog = await parseBlogData(buckets.blog);
-    // const projects = await parseProjectData(buckets.projects);
-    const projects = {
-     main: {
-        title: "My work",
-        body: "A bunch of rich text and links to other pages",
-        featuredImage: "presentation.jpg",
-        label: "projects",
-        type: "project",
-        permalink: "projects",
-      },
-      pages: [],
-    }
+    const projects = await parseProjectData(buckets.projects);
 
     const parsedData = {
         home,
         blog,
-        projects
+        projects,
+        resume
     }
 
     return parsedData;

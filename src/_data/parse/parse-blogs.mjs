@@ -37,7 +37,7 @@ export const parseBlogData = async (blogEntries) => {
         }
     })
 
-    const blogCategories = {}
+  const blogCategories = {}
 
   for (const blog of blogPagesSortedByDate) {
     const published = blog.properties?.published?.checkbox
