@@ -74,7 +74,7 @@ export const parseBlogData = async (blogEntries) => {
         const page = {
           title,
           body,
-          permalink: `blog/${categoryId}/${id}`,
+          permalink: `/blog/${categoryId}/${id}`,
           metaTitle,
           description,
           featuredImage,
